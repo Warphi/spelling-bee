@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Spelling Bee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="game" hidden>
+        <button id="rank-row" type="button" aria-label="Click to see today's ranks">
+          <h4 id="rank-name">Beginner</h4>
+          <div id="progress-bar">
+            <div id="progress-line"><div id="progress-dots"></div></div>
+            <div id="progress-marker"><span id="progress-value">0</span></div>
+          </div>
+        </button>
+
+        <details id="found">
+          <summary><span id="found-summary">You have found 0 words</span></summary>
+          <ul id="found-list"></ul>
+        </details>
+
+        <div id="play">
+          <div id="message"></div>
+          <div id="input-line"><span id="input"></span></div>
+
+          <svg id="hive" viewBox="0 0 300 300" aria-label="letter hive"></svg>
+
+          <div id="controls">
+            <button id="delete" type="button">Delete</button>
+            <button id="shuffle" type="button" aria-label="Shuffle outer letters">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.74 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                />
+              </svg>
+            </button>
+            <button id="enter" type="button">Enter</button>
+          </div>
+        </div>
+
+        <p id="source-note"></p>
+      </section>
+
+      <div id="ranks-modal" hidden>
+        <div id="ranks-scrim"></div>
+        <div id="ranks-dialog" role="dialog" aria-modal="true" aria-label="Today's ranks">
+          <button id="ranks-close" type="button" aria-label="Close">&times;</button>
+          <h2>Ranks</h2>
+          <p id="ranks-intro"></p>
+          <table id="ranks-table"></table>
+        </div>
+      </div>
+
+      <section id="error" hidden>
+        <p id="error-text"></p>
+        <button id="retry" type="button">Retry</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
